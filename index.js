@@ -18,7 +18,7 @@ var previous = function () {
     john.classList.add("display");
     johnImg.classList.remove("fade-anime");
   } else {
-    //john.classList.add("display");
+    john.classList.add("display");
     //tanya.classList.remove("display", "fade-anime");
   }
 };
