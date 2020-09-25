@@ -1,0 +1,375 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  color: hsl(240, 38%, 20%);
+}
+
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.display {
+  display: none !important;
+}
+
+.fade-anime {
+  animation-name: fade;
+  -webkit-animation-name: fade;
+  animation-duration: 1.5s;
+  -webkit-animation-duration: 1.5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@keyframes fade {
+  from {
+    visibility: hidden;
+    opacity: 0.1;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fade {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.main-container {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  padding: 92px 10%;
+  display: flex;
+  flex-direction: column;
+  background: url(./images/pattern-bg.svg), url(./images/pattern-quotes.svg),
+    url(./images/pattern-curve.svg);
+  background-repeat: no-repeat;
+  background-size: 36%, initial, initial;
+  background-position: 92% 30%, 30% 25%, bottom left;
+}
+
+.main-container .slides-wrapper {
+  width: 100%;
+  height: 544px;
+}
+
+.main-container .slide {
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.main-container .slide .image {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 544px;
+  width: 580px;
+  background: white;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.main-container .slide .image .container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.main-container .slide .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  opacity: 0.1;
+}
+
+.main-container .slide .image img#tanya {
+  opacity: 1;
+}
+
+.main-container .slide .image .buttons-wrapper {
+  position: absolute;
+  bottom: -20px;
+  left: 20%;
+  height: 50px;
+  width: 100px;
+  display: flex;
+  background: white;
+  border-radius: 30px;
+  box-shadow: 1px 8px 10px rgba(0, 0, 0, 0.4);
+}
+
+.main-container .slide .image .buttons-wrapper .previous-btn {
+  background: url(./images/icon-prev.svg) no-repeat;
+  background-size: 30%;
+  background-position: center;
+  width: 50%;
+  border-radius: 30px 0 0 30px;
+}
+
+.main-container .slide .image .buttons-wrapper .previous-btn:focus {
+  box-shadow: inset 1px 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-container .slide .image .buttons-wrapper .next-btn {
+  background: url(./images/icon-next.svg) no-repeat;
+  background-size: 30%;
+  background-position: center;
+  width: 50%;
+  border-radius: 0 30px 30px 0;
+}
+
+.main-container .slide .image .buttons-wrapper .next-btn:focus {
+  box-shadow: inset -1px 0px 4px rgba(0, 0, 0, 0.3);
+}
+
+.main-container .slide .text {
+  position: absolute;
+  top: 154px;
+  left: 0;
+  width: 60%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.main-container .slide .text p:nth-child(1) {
+  font-weight: lighter;
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.main-container .slide .text p:nth-child(2) span {
+  margin-right: 10px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.main-container .slide .text p:nth-child(2) span:nth-child(2) {
+  font-weight: normal;
+  color: hsl(240, 18%, 77%);
+}
+
+.attribution {
+  margin: 50px auto 0;
+  align-self: flex-end;
+  font-size: 14px;
+  color: hsl(240, 38%, 20%);
+}
+
+.attribution a:hover {
+  color: rgba(32, 32, 70, 0.8);
+}
+
+@media (max-width: 1300px) {
+  .main-container {
+    padding: 92px 7% 70px;
+  }
+  .main-container .slide .text {
+    width: 55%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    padding: 92px 6.5% 70px;
+    background-size: 34%, initial, initial;
+    background-position: 92% 20%, 24% 23%, bottom left;
+  }
+  .main-container .slide .text {
+    width: 52%;
+  }
+  .main-container .slide .image {
+    width: 530px;
+  }
+}
+
+@media (max-width: 1060px) {
+  .main-container {
+    padding: 92px 6.5% 70px;
+    background-size: 10%, 10%, initial;
+    background-position: 100% 17%, 13% 23%, bottom left;
+  }
+  .main-container .slide .image {
+    width: 480px;
+    height: 500px;
+  }
+}
+
+@media (max-width: 900px) {
+  .main-container {
+    padding: 70px 20px 10px;
+    background: url(./images/pattern-bg.svg), url(./images/pattern-quotes.svg),
+      url(./images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 65%, 14%, 100%;
+    background-position: 68% 8%, 50% 62%, bottom left;
+  }
+
+  .main-container .slides-wrapper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .main-container .slide {
+    width: 100%;
+    height: 100%;
+    position: unset;
+    flex-direction: column;
+  }
+  .main-container .slide .image {
+    position: unset;
+    width: 65%;
+    height: 450px;
+    margin: 0 auto;
+  }
+
+  .main-container .slide .text {
+    position: unset;
+    width: 100%;
+    padding: 220px 20px 20px 0px;
+    text-align: center;
+  }
+  .attribution {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    padding: 50px 20px 10px;
+    background: url(./images/pattern-bg.svg), url(./images/pattern-quotes.svg),
+      url(./images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 59%, 13%, 100%;
+    background-position: 68% 8%, 50% 67%, bottom left;
+  }
+
+  .main-container .slide .image {
+    position: unset;
+    width: 67%;
+    height: 270px;
+    margin: 0 auto;
+  }
+
+  .main-container .slide .image .buttons-wrapper {
+    width: 70px;
+    height: 40px;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .main-container .slide .text {
+    position: unset;
+    width: 100%;
+    padding: 80px 20px 20px 0px;
+    text-align: center;
+  }
+
+  .main-container .slide .text p:nth-child(1) {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .main-container .slide .text p:nth-child(2) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-container .slide .text p:nth-child(2) span {
+    margin-bottom: 5px;
+  }
+
+  .attribution {
+    margin: 10px auto 30px;
+    font-size: 10px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .main-container {
+    padding: 50px 20px 10px;
+    background-size: 70%, 11%, 100%;
+    background-position: 68% 8%, 50% 66%, bottom left;
+  }
+
+  .main-container .slide .image {
+    position: unset;
+    width: 67%;
+    margin: 0 auto;
+  }
+
+  .main-container .slide .text {
+    position: unset;
+    width: 100%;
+    padding: 60px 20px 20px 0px;
+    text-align: center;
+  }
+  .attribution {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 450px) {
+  .main-container {
+    background: url(./images/pattern-bg.svg), url(./images/pattern-quotes.svg),
+      url(./images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 75%, 15%, 100%;
+    background-position: 48% 8%, 50% 65%, bottom left;
+  }
+}
+
+@media (max-width: 400px) {
+  .main-container {
+    padding: 50px 20px 10px;
+    background: url(./images/pattern-bg.svg), url(./images/pattern-quotes.svg),
+      url(./images/pattern-curve.svg);
+    background-repeat: no-repeat;
+    background-size: 75%, 17%, 100%;
+    background-position: 48% 8%, 50% 60%, bottom left;
+  }
+  .main-container .slide .image {
+    position: unset;
+    width: 64%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .main-container .slide .image .buttons-wrapper {
+    width: 60px;
+    height: 30px;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .main-container .slide .text {
+    position: unset;
+    width: 100%;
+    padding: 80px 20px 20px 0px;
+    text-align: center;
+  }
+  .attribution {
+    margin: 10px auto 40px;
+    font-size: 10px;
+    text-align: center;
+  }
+}
